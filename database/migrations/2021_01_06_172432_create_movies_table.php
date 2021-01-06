@@ -18,7 +18,7 @@ class CreateMoviesTable extends Migration
             $table->string('name');
             $table->string('code', 80);
             $table->double('year');
-            $table->enum('available', [true,false]);
+            $table->boolean('available');
             $table->timestamps();
         });
     }
