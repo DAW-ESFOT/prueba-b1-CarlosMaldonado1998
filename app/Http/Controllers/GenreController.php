@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Genre;
+use App\Models\Movie;
 use Illuminate\Http\Request;
 
 class GenreController extends Controller
@@ -15,6 +16,14 @@ class GenreController extends Controller
     {
         return $genre;
     }
+
+    public function showmovies(Genre $genre, Movie $movie)
+    {
+        $genre = $movie->where('genre_id', $genre->id)->get();
+        return $genre;
+    }
+
+
     public function store(Request $request)
     {
         $genre = Genre::create($request->all());

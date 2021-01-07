@@ -31,3 +31,7 @@ Route::get('genres/{genre}', 'App\Http\Controllers\GenreController@show');
 Route::post('genres', 'App\Http\Controllers\GenreController@store');
 Route::put('genres/{genre}', 'App\Http\Controllers\GenreController@update');
 Route::delete('genres/{genre}', 'App\Http\Controllers\GenreController@delete');
+
+Route::get('genres/{genre}/movies', 'App\Http\Controllers\GenreController@showmovies');
+Route::get('users/{user}/genres', 'App\Http\Controllers\UserController@showgenres');
+

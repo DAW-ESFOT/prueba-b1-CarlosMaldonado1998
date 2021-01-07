@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Movie;
 use App\Models\User;
+use App\Models\Genre;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -15,6 +17,15 @@ class UserController extends Controller
     {
         return $user;
     }
+
+    public function showgenres(User $user)
+    {
+        $user = $user->genres()->get(['genre_id']);
+        return $user;
+    }
+
+
+
     public function store(Request $request)
     {
         $user = User::create($request->all());

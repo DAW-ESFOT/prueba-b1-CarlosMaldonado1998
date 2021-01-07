@@ -17,7 +17,7 @@ class GenresTableSeeder extends Seeder
         Genre::truncate();
         $faker = \Faker\Factory::create();
 
-        for ($i = 0; $i < 3; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             Genre::create([
                 'name' => $faker->word,
             ]);
