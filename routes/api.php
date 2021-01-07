@@ -34,4 +34,5 @@ Route::delete('genres/{genre}', 'App\Http\Controllers\GenreController@delete');
 
 Route::get('genres/{genre}/movies', 'App\Http\Controllers\GenreController@showmovies');
 Route::get('users/{user}/genres', 'App\Http\Controllers\UserController@showgenres');
+Route::get('users/{user}/movies/all', 'App\Http\Controllers\UserController@showallmovies');
 

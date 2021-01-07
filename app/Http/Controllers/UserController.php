@@ -24,6 +24,16 @@ class UserController extends Controller
         return $user;
     }
 
+    public function showallmovies(User $user, Movie $movie)
+    {
+
+        $genres = $user->genres()->get(['genre_id']);
+        foreach($genres as $genre){
+            $user = $movie->where('genre_id', $genre['genre_id'])->get();
+        }
+
+        return $user;
+    }
 
 
     public function store(Request $request)
